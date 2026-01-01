@@ -77,35 +77,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Zoho Catalyst
-
-To deploy this Next.js application on [Zoho Catalyst](https://catalyst.zoho.com/), follow these steps:
-
-1.  **Install Catalyst CLI**:
-    ```bash
-    npm install -g zcatalyst-cli
-    ```
-
-2.  **Login to Catalyst**:
-    ```bash
-    catalyst login
-    ```
-
-3.  **Initialize Project**:
-    Run the following command in your project root:
-    ```bash
-    catalyst init
-    ```
-    -   Select your project.
-    -   Choose **App Sail** (for hosting Next.js as a server-side app) or **Web Client** (for static export). *Recommended: App Sail for full Next.js features.*
-
-4.  **Deploy**:
-    ```bash
-    catalyst deploy
-    ```
-
-For detailed instructions, refer to the [Catalyst Documentation](https://docs.catalyst.zoho.com/).
-
 ## Deploy via Catalyst Slate (Git Integration)
 
 **Catalyst Slate** allows you to deploy your application directly from your GitHub repository with automatic updates on every push.
