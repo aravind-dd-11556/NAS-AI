@@ -19,6 +19,26 @@
 *   **Slack Integration**: Send your generated rejections directly to a Slack channel.
 *   **Smart & Witty**: AI mode understands context to provide the perfect "No" for any situation.
 
+## Configuration
+
+### API Keys
+To use AI features, you need to configure your API keys. You can do this in two ways:
+
+1.  **Environment Variables** (Recommended for deployment):
+    Create a `.env.local` file in the root directory:
+    ```env
+    GEMINI_API_KEY=your_google_ai_key
+    OPENAI_API_KEY=your_openai_key
+    ```
+2.  **UI Settings** (Best for local testing):
+    Click the **Settings** button in the app header and enter your API keys directly. These are stored temporarily in your browser logic.
+
+### Slack Integration
+To verify "No-as-a-Service" workflows in Slack:
+1.  Create an [Incoming Webhook](https://api.slack.com/messaging/webhooks) for your Slack channel.
+2.  Go to **Settings** in the app.
+3.  Paste your webhook URL into the **Slack Integration** field.
+
 ## Built With
 
 *   [Next.js 16](https://nextjs.org/) - The React Framework for the Web
