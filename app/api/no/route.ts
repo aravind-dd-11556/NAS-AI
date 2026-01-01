@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error('Error generating excuse:', error);
         return NextResponse.json(
-            { error: 'Failed to generate excuse' },
+            { error: 'Failed to generate excuse', details: String(error) },
             { status: 500 }
         );
     }

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
-
 import { QRCodeCanvas } from "qrcode.react";
+import Toast from "./components/Toast";
 
 type ExcuseResponse = {
   excuse: string;
@@ -36,6 +36,13 @@ export default function Home() {
   // Integrations State
   const [slackWebhook, setSlackWebhook] = useState<string>("");
 
+  // Toast State
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" | "info" } | null>(null);
+
+  const showToast = (message: string, type: "success" | "error" | "info" = "info") => {
+    setToast({ message, type });
+  };
+
   useEffect(() => {
     // Load Slack webhook from local storage
     const savedWebhook = localStorage.getItem("slackWebhook");
@@ -51,12 +58,12 @@ export default function Home() {
 
   const sendToSlack = async () => {
     if (!slackWebhook) {
-      alert("Please configure your Slack Webhook in settings first.");
+      showToast("Please configure your Slack Webhook in settings first.", "error");
       setShowSettings(true);
       return;
     }
     if (!excuse || excuse.startsWith("Click generate") || excuse.startsWith("Error")) {
-      alert("Please generate a valid rejection first.");
+      showToast("Please generate a valid rejection first.", "error");
       return;
     }
 
@@ -68,13 +75,13 @@ export default function Home() {
       });
 
       if (res.ok) {
-        alert("Sent to Slack successfully!");
+        showToast("Sent to Slack successfully!", "success");
       } else {
         const err = await res.json();
-        alert("Failed to send to Slack: " + (err.error || "Unknown error"));
+        showToast("Failed to send to Slack: " + (err.error || "Unknown error"), "error");
       }
     } catch (e) {
-      alert("Failed to send to Slack.");
+      showToast("Failed to send to Slack.", "error");
       console.error(e);
     }
   };
@@ -130,11 +137,13 @@ export default function Home() {
 
       if (data.error) {
         setExcuse("Error: " + data.error);
+        showToast(data.error, "error");
       } else {
         setExcuse(data.excuse);
       }
     } catch (error) {
       setExcuse("Something went wrong. Just say No.");
+      showToast("Network error or server issue.", "error");
     } finally {
       setLoading(false);
     }
@@ -142,7 +151,7 @@ export default function Home() {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(excuse);
-    // Could add a toast here
+    showToast("Copied to clipboard!", "success");
   };
 
   return (
@@ -232,9 +241,6 @@ export default function Home() {
             </div>
           )}
 
-          {/* Title removed from here, now in header */}
-          {/* <h1 className={styles.title}>NO.</h1> */}
-
           <div className={styles.toggle}>
             <span className={styles.label} style={{ opacity: !isAiMode ? 1 : 0.5 }}>Classic</span>
             <label className={styles.switch}>
@@ -271,9 +277,6 @@ export default function Home() {
                 value={inputContext}
                 onChange={(e) => setInputContext(e.target.value)}
               />
-
-
-              {/* Output Options */}
 
               {/* Output Options */}
               <div className={styles.styleSection}>
@@ -362,6 +365,15 @@ export default function Home() {
       <footer className={styles.footer}>
         <p>Powered by Gemini 2.0 • No as a Service</p>
       </footer>
+
+      {/* Toast Notification */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </div>
   );
 }
