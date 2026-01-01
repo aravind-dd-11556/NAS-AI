@@ -2,6 +2,15 @@
 
 ![No-as-a-Service Banner](public/naas_banner.png)
 
+<div align="center">
+
+![Next.js](https://img.shields.io/badge/Next.js-16.1-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Zoho Catalyst](https://img.shields.io/badge/Zoho_Catalyst-Deployed-green?style=for-the-badge)
+
+</div>
+
 **No-as-a-Service** is your premier solution for saying "No" with style. Whether you need a quick, classic excuse or a custom, AI-crafted rejection, we've got you covered.
 
 ## Features
@@ -11,6 +20,15 @@
 *   **Multi-Language Support**: Get rejections in English, Tamil, and more.
 *   **Slack Integration**: Send your generated rejections directly to a Slack channel.
 *   **Smart & Witty**: AI mode understands context to provide the perfect "No" for any situation.
+
+## Built With
+
+*   [Next.js 16](https://nextjs.org/) - The React Framework for the Web
+*   [React 19](https://react.dev/) - The library for web and native user interfaces
+*   [Google Gemini](https://ai.google.dev/) - Multimodal AI model (@google/generative-ai)
+*   [OpenAI](https://openai.com/) - AI model provider
+*   [Ollama](https://ollama.com/) - Local AI model runner
+*   [Zoho Catalyst](https://catalyst.zoho.com/) - Serverless Cloud Platform with App Sail and Slate
 
 ## Getting Started
 
