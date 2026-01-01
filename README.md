@@ -85,3 +85,7 @@ For detailed instructions, refer to the [Catalyst Documentation](https://docs.ca
     -   **Build Command**: `npm run build`
     -   **Output Directory**: `.next` (or `out` if using static export)
 8.  **Deploy**: Click **Deploy**. Your app will be live and will auto-deploy on future commits.
+
+## Inspiration
+
+This project is inspired by [No-as-a-Service](https://github.com/hotheadhacker/no-as-a-service) by hotheadhacker. We built upon the original concept to include AI-powered rejections, multi-language support, and integrations.
