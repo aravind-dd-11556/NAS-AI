@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "lru-cache": "^11.2.4",
     "next": "16.1.1",
     "ollama": "^0.6.3",
     "openai": "^6.15.0",
