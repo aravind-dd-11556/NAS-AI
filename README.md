@@ -5,8 +5,6 @@
 <div align="center">
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.1-black?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Zoho Catalyst](https://img.shields.io/badge/Zoho_Catalyst-Deployed-green?style=for-the-badge)
 
 </div>
